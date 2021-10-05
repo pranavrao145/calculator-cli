@@ -1,29 +1,29 @@
 package operations
 
-func add() {
+func Add() {
 	return
 }
 
-func subtract() {
+func Subtract() {
 	return
 }
 
-func multiply() {
+func Multiply() {
 	return
 }
 
-func divide() {
+func Divide() {
 	return
 }
 
-func exp() {
+func Exp() {
 	return
 }
 
-func log() {
+func Log() {
     return
 }
 
-func mod() {
+func Mod() {
     return
 }
