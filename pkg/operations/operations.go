@@ -2,6 +2,7 @@ package operations
 
 import (
 	"fmt"
+	"math"
 	"strconv"
 )
 
@@ -73,23 +74,45 @@ func Divide(nums ...string) (float64, bool) {
 	if err != nil {
 		fmt.Println("Couldn't parse an argument!")
 		return 0, false // false for failure of function
-    }
+	}
 
-    // check for division by 0
-    if num2 == float64(0) {
+	// check for division by 0
+	if num2 == float64(0) {
 		fmt.Println("Can't divide by zero!")
 		return 0, false // false for failure of function
-    }
+	}
 
 	return (num1 / num2), true
 }
 
-func Exp() {
-	return
+func Exp(nums ...string) (float64, bool) {
+	num1, err := strconv.ParseFloat(nums[0], 10)
+
+	if err != nil {
+		fmt.Println("Couldn't parse an argument!")
+		return 0, false // false for failure of function
+	}
+
+	num2, err := strconv.ParseFloat(nums[1], 10)
+
+	if err != nil {
+		fmt.Println("Couldn't parse an argument!")
+		return 0, false // false for failure of function
+	}
+
+	return math.Pow(num1, num2), true
+
 }
 
-func Log() {
-	return
+func Log(nums ...string) (float64, bool) {
+	num, err := strconv.ParseFloat(nums[0], 10)
+
+	if err != nil {
+		fmt.Println("Couldn't parse an argument!")
+		return 0, false // false for failure of function
+	}
+
+	return math.Log10(num), true
 }
 
 func Mod() {

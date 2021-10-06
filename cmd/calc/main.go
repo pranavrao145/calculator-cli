@@ -57,8 +57,8 @@ func main() {
         {
         	Name:        "logarithm",
         	Aliases:     []string{"log", "l"},
-        	Usage:       "logarithm [base] [argument]",
-        	Description: "Calculates the logarithm with the base and argument given and prints out the result.",
+        	Usage:       "logarithm [argument]",
+        	Description: "Calculates the normal logarithm (base 10) of argument given and prints out the result.",
             Action: nil,
         },
         {
