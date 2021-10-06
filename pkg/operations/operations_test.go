@@ -21,3 +21,19 @@ func TestAddition(t *testing.T) {
     x, y = Add("3", "3", "s", "3")
     assert.Equal(t, y, false, "Should not return with success")
 }
+
+func TestSubtraction(t *testing.T) {
+    // test 1: positive
+    x, y := Subtract("6", "3")
+    assert.Equal(t, x, int64(3), "6 - 3 = 3")
+    assert.Equal(t, y, true, "Must return with success")
+
+    // test 2: positive
+    x, y = Subtract("-6", "3")
+    assert.Equal(t, x, int64(-9), "-6 - 3 = -9")
+    assert.Equal(t, y, true, "Must return with success")
+
+    // test 3: failure
+    x, y = Subtract("s", "3")
+    assert.Equal(t, y, false, "Should not return with success")
+}
