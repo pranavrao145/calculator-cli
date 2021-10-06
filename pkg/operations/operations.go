@@ -5,12 +5,12 @@ import (
 	"strconv"
 )
 
-func Add(nums ...string) (int64, bool) {
-	var sum int64
+func Add(nums ...string) (float64, bool) {
+	var sum float64
 	sum = 0
 
 	for _, num := range nums {
-		num, err := strconv.ParseInt(num, 10, 0) // attempt to convert to int
+		num, err := strconv.ParseFloat(num, 10) // attempt to convert to int
 
 		if err != nil {
 			fmt.Println("Couldn't parse an argument!")
@@ -23,15 +23,15 @@ func Add(nums ...string) (int64, bool) {
 	return sum, true // true for success of add function
 }
 
-func Subtract(nums ...string) (int64, bool) {
-	num1, err := strconv.ParseInt(nums[0], 10, 0)
+func Subtract(nums ...string) (float64, bool) {
+	num1, err := strconv.ParseFloat(nums[0], 10)
 
 	if err != nil {
 		fmt.Println("Couldn't parse an argument!")
 		return 0, false // false for failure of function
 	}
 
-	num2, err := strconv.ParseInt(nums[1], 10, 0)
+	num2, err := strconv.ParseFloat(nums[1], 10)
 
 	if err != nil {
 		fmt.Println("Couldn't parse an argument!")
@@ -42,12 +42,12 @@ func Subtract(nums ...string) (int64, bool) {
 
 }
 
-func Multiply(nums ...string) (int64, bool) {
-	var prod int64
+func Multiply(nums ...string) (float64, bool) {
+	var prod float64
 	prod = 1
 
 	for _, num := range nums {
-		num, err := strconv.ParseInt(num, 10, 0) // attempt to convert to int
+		num, err := strconv.ParseFloat(num, 10) // attempt to convert to int
 
 		if err != nil {
 			fmt.Println("Couldn't parse an argument!")
