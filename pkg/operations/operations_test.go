@@ -37,3 +37,19 @@ func TestSubtraction(t *testing.T) {
     x, y = Subtract("s", "3")
     assert.Equal(t, y, false, "Should not return with success")
 }
+
+func TestMultiplication(t *testing.T) {
+    // test 1: 2 args
+    x, y := Multiply("3", "3")
+    assert.Equal(t, x, int64(9), "3 * 3 = 9")
+    assert.Equal(t, y, true, "Must return with success")
+
+    // test 2: more args
+    x, y = Multiply("3", "3", "3", "3")
+    assert.Equal(t, x, int64(81), "3 * 3 * 3 * 3 = 81")
+    assert.Equal(t, y, true, "Must return with success")
+
+    // test 3: failure
+    x, y = Multiply("3", "3", "s", "3")
+    assert.Equal(t, y, false, "Should not return with success")
+}
