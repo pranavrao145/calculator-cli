@@ -53,3 +53,28 @@ func TestMultiplication(t *testing.T) {
     x, y = Multiply("3", "3", "s", "3")
     assert.Equal(t, y, false, "Should not return with success")
 }
+
+func TestDivision(t *testing.T) {
+    // test 1: integer 
+    x, y := Divide("6", "3")
+    assert.Equal(t, x, float64(2), "6 / 3 = 2")
+    assert.Equal(t, y, true, "Must return with success")
+
+    // test 2: float and int
+    x, y = Divide("-6.3", "3")
+    assert.Equal(t, x, float64(-2.1), "-6.3 / 3 = -2.1")
+    assert.Equal(t, y, true, "Must return with success")
+
+    // test 3: float and float
+    x, y = Divide("-6.3", "3.33")
+    assert.Equal(t, x, float64(-1.8918918918918919), "-6.3 / 3.33 = -1.8918918918919")
+    assert.Equal(t, y, true, "Must return with success")
+
+    // test 4: divide by zero
+    x, y = Divide("3", "0")
+    assert.Equal(t, y, false, "Must not return with success")
+
+    // test 5: failure
+    x, y = Divide("s", "3")
+    assert.Equal(t, y, false, "Should not return with success")
+}
