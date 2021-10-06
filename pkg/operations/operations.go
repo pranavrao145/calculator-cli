@@ -42,8 +42,22 @@ func Subtract(nums ...string) (int64, bool) {
 
 }
 
-func Multiply() {
-	return
+func Multiply(nums ...string) (int64, bool) {
+    var prod int64
+    prod = 1
+
+    for _, num := range nums {
+        num, err := strconv.ParseInt(num, 10, 0) // attempt to convert to int 
+
+        if err != nil {
+            fmt.Println("Couldn't parse an argument!")
+            return prod, false // false for failure of function
+        }
+        
+        prod *= num
+    }
+
+    return prod, true // true for success of multiply function
 }
 
 func Divide() {
