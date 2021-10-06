@@ -89,3 +89,18 @@ func TestLog(t *testing.T) {
     x, y = Subtract("s")
     assert.Equal(t, y, false, "Must not return with success")
 }
+
+func TestMod(t *testing.T) {
+    // test 1: ints
+    x, y := Mod("6", "4")
+    assert.Equal(t, x, int64(2), "6 % 4 = 2")
+    assert.Equal(t, y, true, "Must return with success")
+
+    // test 1: floats (fail)
+    x, y = Mod("6.3", "4")
+    assert.Equal(t, y, false, "Must return with success")
+
+    // test 3: failure
+    x, y = Mod("s", "3")
+    assert.Equal(t, y, false, "Should not return with success")
+}
