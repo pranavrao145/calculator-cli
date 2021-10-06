@@ -64,8 +64,8 @@ func main() {
         {
         	Name:        "modulus",
         	Aliases:     []string{"mod", "m"},
-        	Usage:       "modulus [number] [number]",
-        	Description: "Applies the modulus function the first given number by the second and prints out the result.",
+        	Usage:       "modulus [integer] [integer]",
+        	Description: "Applies the modulus function the first given integer by the second and prints out the result.",
             Action: nil,
         },
     }

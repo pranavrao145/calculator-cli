@@ -115,6 +115,20 @@ func Log(nums ...string) (float64, bool) {
 	return math.Log10(num), true
 }
 
-func Mod() {
-	return
+func Mod(nums ...string) (int64, bool) {
+	num1, err := strconv.ParseInt(nums[0], 10, 0)
+
+	if err != nil {
+		fmt.Println("Couldn't parse an argument!")
+		return 0, false // false for failure of function
+	}
+
+	num2, err := strconv.ParseInt(nums[1], 10, 0)
+
+	if err != nil {
+		fmt.Println("Couldn't parse an argument!")
+		return 0, false // false for failure of function
+	}
+
+	return (num1 % num2), true
 }
