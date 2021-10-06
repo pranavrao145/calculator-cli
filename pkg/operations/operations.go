@@ -23,8 +23,23 @@ func Add(nums ...string) (int64, bool) {
     return sum, true // true for success of add function
 }
 
-func Subtract() {
-	return
+func Subtract(nums ...string) (int64, bool) {
+    num1, err := strconv.ParseInt(nums[0], 10, 0)
+
+    if err != nil {
+        fmt.Println("Couldn't parse an argument!")
+        return 0, false // false for failure of function
+    }
+
+    num2, err := strconv.ParseInt(nums[1], 10, 0)
+
+    if err != nil {
+        fmt.Println("Couldn't parse an argument!")
+        return 0, false // false for failure of function
+    }
+
+    return (num1 - num2), true
+
 }
 
 func Multiply() {
