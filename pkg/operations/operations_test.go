@@ -78,3 +78,14 @@ func TestDivision(t *testing.T) {
     x, y = Divide("s", "3")
     assert.Equal(t, y, false, "Should not return with success")
 }
+
+func TestLog(t *testing.T) {
+    // test 1: valid
+    x, y := Log("10")
+    assert.Equal(t, x, float64(1), "log(10) = 1")
+    assert.Equal(t, y, true, "Must return with success")
+
+    // test 2: invalid
+    x, y = Subtract("s")
+    assert.Equal(t, y, false, "Must not return with success")
+}
